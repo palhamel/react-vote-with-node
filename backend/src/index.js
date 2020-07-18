@@ -1,7 +1,11 @@
 const express = require("express");
+const setupMiddleware = require("./setup/middleware");
+
+const app = express();
+
+setupMiddleware(app);
 
 const port = process.env.PORT || 8080;
-const app = express();
 
 // Start the server
 app.listen(port, () => {
