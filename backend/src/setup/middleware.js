@@ -1,3 +1,4 @@
+// Old import way:
 const bodyParser = require("body-parser");
 
 module.exports = (app) => {
