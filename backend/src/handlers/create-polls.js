@@ -1,14 +1,9 @@
 module.exports = (client) => {
-
   return (request, response) => {
-    console.log('-------------------------WE ARE THE ROBOTS------------------------------', client)
+    console.log("-WE ARE THE ROBOTS-", client);
 
-      response.json({
-        message: 'funkar klockrent :) '
-      })
-  }
-}
-
-
-
-
+    res.json({
+      message: "funkar klockrent :)",
+    });
+  };
+};
