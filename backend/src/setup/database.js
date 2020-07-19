@@ -3,10 +3,13 @@ const Mongodb = require("mongodb");
 
 const uri = "mongodb://localhost/vote-with-node";
 
-module.exports = () => {
+module.exports = async () => {
+  
   const client = new Mongodb.MongoClient(uri, {
     useUnifiedTopology: true,
   });
 
-  return client.connect();
+  await client.connect()
+
+  return client.db();
 };

@@ -12,17 +12,27 @@ const app = express();
 // Middle wares to enable cors and json body parsing
 setupMiddleware(app);
 
-setupDatabase()
-  .then((client) => {
-    setupRouter(app, client);
+
+
+async function start() {
+
+  const db = await setupDatabase()
+
+  setupRouter(app, db);
     console.log(client);
     // Start the server
     app.listen(port, () => {
       console.log(`Server running on http://localhost:${port}`);
     });
-  })
-  // log error to console
-  .catch(console.error);
+
+
+}
+
+
+start().catch(console.error);
+
+
+
 
 // -----------------------------------------------
 // Start defining routes here:
