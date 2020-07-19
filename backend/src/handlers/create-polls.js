@@ -2,7 +2,7 @@ module.exports = (client) => {
   return (request, response) => {
     console.log("-WE ARE THE ROBOTS-", client);
 
-    res.json({
+    response.json({
       message: "funkar klockrent :)",
     });
   };
